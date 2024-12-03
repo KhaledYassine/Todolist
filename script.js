@@ -70,6 +70,7 @@ const firebaseConfig = {
       // Create a complete button
       const completeBtn = document.createElement('button');
       completeBtn.textContent = task.completed ? 'Undo' : 'Complete';
+      li.style.textDecoration = task.completed ? 'line-through' : 'none';
       completeBtn.onclick = async () => {
         await updateTask(task.id, { completed: !task.completed });
         loadTasks(); // Refresh the task list
